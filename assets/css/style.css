@@ -6,6 +6,7 @@ html {
     background-color: #111010;
     color: white;
     line-height: 24px;
+    padding: 5px;
 }
 
 body {  
@@ -19,6 +20,10 @@ a {
     color: rgb(163, 163, 163);
 }
 
+.border-radius-15 {
+    border-radius: 15px;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -29,6 +34,7 @@ h1 {
     font-size: 2.5rem;
     margin: 8px 0;
     text-align: right;
+    line-height: 40px;
 }
 
 h2 {
