@@ -1,0 +1,23 @@
+url: https://fbonizzi.it
+domain: fbonizzi.it
+title: Francesco Bonizzi
+description: Sono Francesco Bonizzi e sono appassionato di tante cose. Ecco il mio sito personale!
+
+plugins:
+    - jekyll-sitemap
+    - jekyll-compress-images
+sass:
+    sass_dir: ./_scss
+
+exclude:
+    - dev/
+    - _compress_images_cache.yml
+    - .prettierignore
+    - README.md
+
+imageoptim:
+    svgo: false
+
+collections:
+    projects:
+        output: false

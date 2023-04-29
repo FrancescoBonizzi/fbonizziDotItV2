@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 
 <html lang="it" dir="ltr">
@@ -19,25 +22,19 @@
         <meta name="theme-color" content="#000000" />
 
         <!-- SEO -->
-        <title>Francesco Bonizzi</title>
-        <meta
-            name="description"
-            content="Sono Francesco Bonizzi e sono appassionato di tante cose. Ecco il mio sito personale!"
-        />
+        <title>{{ site.title }}</title>
+        <meta name="description" content="{{ site.description }}" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Francesco Bonizzi" />
-        <meta
-            property="og:description"
-            content="Sono Francesco Bonizzi e sono appassionato di tante cose. Ecco il mio sito personale!"
-        />
-        <meta property="og:site_name" content="Francesco Bonizzi" />
+        <meta property="og:title" content="{{ site.title }}" />
+        <meta property="og:description" content="{{ site.description }}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
         <meta property="og:locale" content="it_IT" />
-        <meta property="og:image" content="https://fbonizzi.it/assets/images/francesco-bonizzi.jpeg" />
-        <meta property="og:url" content="https://notizieterraterra.it" />
+        <meta property="og:image" content="{{ site.url }}/assets/images/francesco-bonizzi.jpeg" />
+        <meta property="og:url" content="{{ site.url }}" />
 
         <meta name="author" content="Francesco Bonizzi" />
 
-        <link rel="canonical" href="https://fbonizzi.it" />
+        <link rel="canonical" href="{{ site.url }}" />
 
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,68 +100,27 @@
         </header>
 
         <main>
+            {% for project in site.projects %}
+
             <section>
-                <h4>Notizie Terra Terra</h4>
+                <h4>{{ project.title }}</h4>
                 <div class="items-in-row">
                     <img
                         class="margin-right-20"
-                        src="./assets/images/Notizie-Terra-Terra-Logo.png"
-                        alt="Logo del sito web Notizie Terra Terra"
+                        src="./assets/images/{{ project.imageName }}"
+                        alt="Logo di {{ project.title }}"
                     />
-                    <p>
-                        📰 Un <strong>canale TikTok</strong> che si propone di offrire una visione originale e alternativa
-                        della realtà che ci circonda, fornendo qualche <strong>angolatura diversa e imprevista</strong>
-                    </p>
+                    <p>{{ project.content }}</p>
                 </div>
-                <a href="https://notizieterraterra.it" title="Apri il sito ufficiale di Notizie Terra Terra">
+                <a href="{{ project.link }}" title="Apri il sito di {{ project.title }}">
                     <object type="image/svg+xml" data="./assets/images/link-icon.svg"></object>
-                    Guarda qualche breve video</a
+                    {{ project.cta }}</a
                 >
             </section>
 
             <hr />
 
-            <section>
-                <h4>Come nasce un papà</h4>
-                <div class="items-in-row">
-                    <img
-                        class="margin-right-20"
-                        src="./assets/images/Come-nasce-un-papa.png"
-                        alt="Logo del sito web del podcast 'Come nasce un papà'"
-                    />
-                    <p>
-                        🎙️ Un podcast nel quale racconto la mia esperienza da neo papà:
-                        <strong
-                            >Un giorno mi sono svegliato e ho scoperto che sarei diventato papà: ecco cos'è successo nei 9
-                            mesi dopo</strong
-                        >
-                    </p>
-                </div>
-                <a href="https://francescopodcast.it" title="Apri il sito del mio podcast 'Come nasce un papà'"
-                    ><object type="image/svg+xml" data="./assets/images/link-icon.svg"></object> Ascolta il mio podcast</a
-                >
-            </section>
-
-            <hr />
-
-            <section>
-                <h4>Imagine Software</h4>
-                <div class="items-in-row">
-                    <img
-                        class="margin-right-20"
-                        src="./assets/images/imagine-software.png"
-                        alt="Logo del sito web di Imagine Software"
-                    />
-                    <p>
-                        👨🏻‍💻 Sono un <strong>software developer</strong> ed ho fondato Imagine Software per occuparmi in prima
-                        persona di sviluppo software da freelance.
-                    </p>
-                </div>
-                <a href="https://imaginesoftware.it" title="Apri il sito della mia azienda, Imagine Software"
-                    ><object type="image/svg+xml" data="./assets/images/link-icon.svg"></object> Dai un'occhiata al mio
-                    lavoro</a
-                >
-            </section>
+            {% endfor %}
         </main>
 
         <footer>
