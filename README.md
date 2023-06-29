@@ -4,5 +4,5 @@ Questo è il mio sito personale, dove mostro i miei progetti e le mie competenze
 
 ## Io!
 
-![Francesco Bonizzi Logo](/assets/images/francesco-bonizzi.jpeg)
+![Francesco Bonizzi Logo](https://avatars.githubusercontent.com/u/11348479)
 
